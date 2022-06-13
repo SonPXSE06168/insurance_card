@@ -8,7 +8,7 @@ import javax.validation.constraints.NotEmpty;
 
 @Data
 public class Account {
-    int id;
+    Integer id;
 
     @Email(message = "Email không hợp lệ")
     String email;

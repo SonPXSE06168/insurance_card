@@ -4,8 +4,8 @@ import lombok.Data;
 
 @Data
 public class Contract {
-    int contractID;
-    int userID;
+    Integer contractID;
+    Integer userID;
     String method;
     long amount;
     String time;

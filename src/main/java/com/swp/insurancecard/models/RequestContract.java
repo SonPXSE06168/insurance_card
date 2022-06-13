@@ -4,9 +4,9 @@ import lombok.Data;
 
 @Data
 public class RequestContract {
-    int id;
+    Integer id;
     String type;
-    int contractID;
+    Integer contractID;
     String requestTime;
     String status;
     String resolveTime;

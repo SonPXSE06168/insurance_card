@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class Punishment {
-    int contractID;
+    Integer contractID;
     long amount;
     String status;
     String resolveTime;

@@ -7,7 +7,7 @@ import javax.validation.constraints.NotEmpty;
 
 @Data
 public class User {
-    int id;
+    Integer id;
     int gender;
     @Min(value = 10, message = "Số điện thoại 10 chữ số")
     String phoneNumber;

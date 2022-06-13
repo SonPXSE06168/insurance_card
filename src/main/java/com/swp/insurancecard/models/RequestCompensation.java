@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class RequestCompensation {
-    int id;
+    Integer id;
     int accidentId;
     String status;
     long amount;

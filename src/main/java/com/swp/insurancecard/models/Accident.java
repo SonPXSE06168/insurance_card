@@ -4,8 +4,8 @@ import lombok.Data;
 
 @Data
 public class Accident {
-    int id;
-    int contractID;
+    Integer id;
+    Integer contractID;
     String detail;
     String occurTime;
     String status;

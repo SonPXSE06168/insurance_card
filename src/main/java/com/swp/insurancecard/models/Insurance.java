@@ -2,11 +2,19 @@ package com.swp.insurancecard.models;
 
 import lombok.Data;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "insurances")
 @Data
 public class Insurance {
-    int id;
-    long price;
-    String type;
-    double duration;
-    String detail;
+    @Id
+    Integer id;
+    String name;
+    String target;
+    String shortDetail;
+    String scope;
+    String img;
 }
