@@ -1,5 +1,7 @@
 package insurance_card.model.entity;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,11 +11,15 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "user_profile")
-public class UserProfileEntity extends ExtendsEntity {
+public class UserProfileEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
 	private Long id;
+
+	@Column(name = "user_id")
+	private Long userId;
 
 	@Column(name = "first_name")
 	private String firstName;
@@ -21,39 +27,68 @@ public class UserProfileEntity extends ExtendsEntity {
 	@Column(name = "last_name")
 	private String lastName;
 
-	@Column
+	@Column(name = "gender")
 	private String gender;
 
-	@Column(name = "phone_number")
-	private String phoneNumer;
+	@Column(name = "phoneNumber")
+	private String phoneNumber;
 
-	@Column
+	@Column(name = "email")
 	private String email;
 
-	@Column(name = "account_id")
-	private String accountId;
+	@Column(name = "date_of_birth")
+	private Date dateOfBirth;
+
+	@Column
+	private String address;
+
+	@Column(name = "created_date")
+	private Date createdDate;
+
+	@Column(name = "created_by")
+	private String createdBy;
+
+	@Column(name = "modified_date")
+	private Date modifiedDate;
+
+	@Column(name = "modified_by")
+	private String modifiedBy;
 
 	public UserProfileEntity() {
-
 	}
 
-	public UserProfileEntity(long id, String firstName, String lastName, String gender, String phoneNumer, String email,
-			String accountId) {
+	public UserProfileEntity(Long id, Long userId, String firstName, String lastName, String gender, String phoneNumber,
+			String email, Date dateOfBirth, String address, Date createdDate, String createdBy, Date modifiedDate,
+			String modifiedBy) {
 		this.id = id;
+		this.userId = userId;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.gender = gender;
-		this.phoneNumer = phoneNumer;
+		this.phoneNumber = phoneNumber;
 		this.email = email;
-		this.accountId = accountId;
+		this.dateOfBirth = dateOfBirth;
+		this.address = address;
+		this.createdDate = createdDate;
+		this.createdBy = createdBy;
+		this.modifiedDate = modifiedDate;
+		this.modifiedBy = modifiedBy;
 	}
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public Long getUserId() {
+		return userId;
+	}
+
+	public void setUserId(Long userId) {
+		this.userId = userId;
 	}
 
 	public String getFirstName() {
@@ -80,12 +115,12 @@ public class UserProfileEntity extends ExtendsEntity {
 		this.gender = gender;
 	}
 
-	public String getPhoneNumer() {
-		return phoneNumer;
+	public String getPhoneNumber() {
+		return phoneNumber;
 	}
 
-	public void setPhoneNumer(String phoneNumer) {
-		this.phoneNumer = phoneNumer;
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
 	}
 
 	public String getEmail() {
@@ -96,12 +131,52 @@ public class UserProfileEntity extends ExtendsEntity {
 		this.email = email;
 	}
 
-	public String getAccountId() {
-		return accountId;
+	public Date getDateOfBirth() {
+		return dateOfBirth;
 	}
 
-	public void setAccountId(String accountId) {
-		this.accountId = accountId;
+	public void setDateOfBirth(Date dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public Date getCreatedDate() {
+		return createdDate;
+	}
+
+	public void setCreatedDate(Date createdDate) {
+		this.createdDate = createdDate;
+	}
+
+	public String getCreatedBy() {
+		return createdBy;
+	}
+
+	public void setCreatedBy(String createdBy) {
+		this.createdBy = createdBy;
+	}
+
+	public Date getModifiedDate() {
+		return modifiedDate;
+	}
+
+	public void setModifiedDate(Date modifiedDate) {
+		this.modifiedDate = modifiedDate;
+	}
+
+	public String getModifiedBy() {
+		return modifiedBy;
+	}
+
+	public void setModifiedBy(String modifiedBy) {
+		this.modifiedBy = modifiedBy;
 	}
 
 }

@@ -10,24 +10,18 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "accident")
-public class AccidentEntity {
+@Table(name = "compensation_detail")
+public class CompensationDetailEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@Column(name = "user_id")
-	private Long userId;
+	@Column(name = "compensation_id")
+	private Long compensationId;
 
-	@Column(name = "accident_type")
-	private String accidentType;
-
-	@Column
-	private String description;
-
-	@Column
-	private String date;
+	@Column(name = "information")
+	private String information;
 
 	@Column(name = "created_date")
 	private Date createdDate;
@@ -41,17 +35,14 @@ public class AccidentEntity {
 	@Column(name = "modified_by")
 	private String modifiedBy;
 
-	public AccidentEntity() {
-
+	public CompensationDetailEntity() {
 	}
 
-	public AccidentEntity(Long id, Long userId, String accidentType, String description, String date, Date createdDate,
+	public CompensationDetailEntity(Long id, Long compensationId, String information, Date createdDate,
 			String createdBy, Date modifiedDate, String modifiedBy) {
 		this.id = id;
-		this.userId = userId;
-		this.accidentType = accidentType;
-		this.description = description;
-		this.date = date;
+		this.compensationId = compensationId;
+		this.information = information;
 		this.createdDate = createdDate;
 		this.createdBy = createdBy;
 		this.modifiedDate = modifiedDate;
@@ -66,36 +57,20 @@ public class AccidentEntity {
 		this.id = id;
 	}
 
-	public Long getUserId() {
-		return userId;
+	public Long getCompensationId() {
+		return compensationId;
 	}
 
-	public void setUserId(Long userId) {
-		this.userId = userId;
+	public void setCompensationId(Long compensationId) {
+		this.compensationId = compensationId;
 	}
 
-	public String getAccidentType() {
-		return accidentType;
+	public String getInformation() {
+		return information;
 	}
 
-	public void setAccidentType(String accidentType) {
-		this.accidentType = accidentType;
-	}
-
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	public String getDate() {
-		return date;
-	}
-
-	public void setDate(String date) {
-		this.date = date;
+	public void setInformation(String information) {
+		this.information = information;
 	}
 
 	public Date getCreatedDate() {

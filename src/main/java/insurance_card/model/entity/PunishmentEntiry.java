@@ -1,5 +1,7 @@
 package insurance_card.model.entity;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,20 +11,20 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "punishment")
-public class PunishmentEntiry extends ExtendsEntity {
+public class PunishmentEntiry {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@Column(name = "punishment_type")
-	private String punishmentType;
-
-	@Column(name = "account_id")
-	private Long accountId;
+	@Column(name = "user_id")
+	private Long userId;
 
 	@Column(name = "contract_id")
 	private Long contractId;
+
+	@Column(name = "punishment_type")
+	private String punishmentType;
 
 	@Column
 	private String date;
@@ -36,40 +38,52 @@ public class PunishmentEntiry extends ExtendsEntity {
 	@Column(name = "is_resolved")
 	private boolean isResolved;
 
-	@Column(name = "resolved_punishment_description")
-	private String resolvedPunishmentDescription;
+	@Column(name = "created_date")
+	private Date createdDate;
+
+	@Column(name = "created_by")
+	private String createdBy;
+
+	@Column(name = "modified_date")
+	private Date modifiedDate;
+
+	@Column(name = "modified_by")
+	private String modifiedBy;
 
 	public PunishmentEntiry() {
-
 	}
 
-	public PunishmentEntiry(Long id, String punishmentType, Long accountId, Long contractId, String date, double price,
-			String description, boolean isResolved, String resolvedPunishmentDescription) {
+	public PunishmentEntiry(Long id, Long userId, Long contractId, String punishmentType, String date, double price,
+			String description, boolean isResolved, Date createdDate, String createdBy, Date modifiedDate,
+			String modifiedBy) {
 		this.id = id;
-		this.punishmentType = punishmentType;
-		this.accountId = accountId;
+		this.userId = userId;
 		this.contractId = contractId;
+		this.punishmentType = punishmentType;
 		this.date = date;
 		this.price = price;
 		this.description = description;
 		this.isResolved = isResolved;
-		this.resolvedPunishmentDescription = resolvedPunishmentDescription;
+		this.createdDate = createdDate;
+		this.createdBy = createdBy;
+		this.modifiedDate = modifiedDate;
+		this.modifiedBy = modifiedBy;
 	}
 
-	public boolean isResolved() {
-		return isResolved;
+	public Long getId() {
+		return id;
 	}
 
-	public void setResolved(boolean isResolved) {
-		this.isResolved = isResolved;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
-	public String getResolvedPunishmentDescription() {
-		return resolvedPunishmentDescription;
+	public Long getUserId() {
+		return userId;
 	}
 
-	public void setResolvedPunishmentDescription(String resolvedPunishmentDescription) {
-		this.resolvedPunishmentDescription = resolvedPunishmentDescription;
+	public void setUserId(Long userId) {
+		this.userId = userId;
 	}
 
 	public Long getContractId() {
@@ -78,26 +92,6 @@ public class PunishmentEntiry extends ExtendsEntity {
 
 	public void setContractId(Long contractId) {
 		this.contractId = contractId;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public Long getAccountId() {
-		return accountId;
-	}
-
-	public void setAccountId(Long accountId) {
-		this.accountId = accountId;
-	}
-
-	public long getId() {
-		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
 	}
 
 	public String getPunishmentType() {
@@ -130,6 +124,46 @@ public class PunishmentEntiry extends ExtendsEntity {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public boolean isResolved() {
+		return isResolved;
+	}
+
+	public void setResolved(boolean isResolved) {
+		this.isResolved = isResolved;
+	}
+
+	public Date getCreatedDate() {
+		return createdDate;
+	}
+
+	public void setCreatedDate(Date createdDate) {
+		this.createdDate = createdDate;
+	}
+
+	public String getCreatedBy() {
+		return createdBy;
+	}
+
+	public void setCreatedBy(String createdBy) {
+		this.createdBy = createdBy;
+	}
+
+	public Date getModifiedDate() {
+		return modifiedDate;
+	}
+
+	public void setModifiedDate(Date modifiedDate) {
+		this.modifiedDate = modifiedDate;
+	}
+
+	public String getModifiedBy() {
+		return modifiedBy;
+	}
+
+	public void setModifiedBy(String modifiedBy) {
+		this.modifiedBy = modifiedBy;
 	}
 
 }

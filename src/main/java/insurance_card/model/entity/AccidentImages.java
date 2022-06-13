@@ -10,24 +10,18 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "accident")
-public class AccidentEntity {
+@Table(name = "accident_images")
+public class AccidentImages {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@Column(name = "user_id")
-	private Long userId;
+	@Column(name = "image_src")
+	private String srcImage;
 
-	@Column(name = "accident_type")
-	private String accidentType;
-
-	@Column
-	private String description;
-
-	@Column
-	private String date;
+	@Column(name = "alt")
+	private String altImage;
 
 	@Column(name = "created_date")
 	private Date createdDate;
@@ -41,17 +35,14 @@ public class AccidentEntity {
 	@Column(name = "modified_by")
 	private String modifiedBy;
 
-	public AccidentEntity() {
-
+	public AccidentImages() {
 	}
 
-	public AccidentEntity(Long id, Long userId, String accidentType, String description, String date, Date createdDate,
-			String createdBy, Date modifiedDate, String modifiedBy) {
+	public AccidentImages(Long id, String srcImage, String altImage, Date createdDate, String createdBy,
+			Date modifiedDate, String modifiedBy) {
 		this.id = id;
-		this.userId = userId;
-		this.accidentType = accidentType;
-		this.description = description;
-		this.date = date;
+		this.srcImage = srcImage;
+		this.altImage = altImage;
 		this.createdDate = createdDate;
 		this.createdBy = createdBy;
 		this.modifiedDate = modifiedDate;
@@ -66,36 +57,20 @@ public class AccidentEntity {
 		this.id = id;
 	}
 
-	public Long getUserId() {
-		return userId;
+	public String getSrcImage() {
+		return srcImage;
 	}
 
-	public void setUserId(Long userId) {
-		this.userId = userId;
+	public void setSrcImage(String srcImage) {
+		this.srcImage = srcImage;
 	}
 
-	public String getAccidentType() {
-		return accidentType;
+	public String getAltImage() {
+		return altImage;
 	}
 
-	public void setAccidentType(String accidentType) {
-		this.accidentType = accidentType;
-	}
-
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	public String getDate() {
-		return date;
-	}
-
-	public void setDate(String date) {
-		this.date = date;
+	public void setAltImage(String altImage) {
+		this.altImage = altImage;
 	}
 
 	public Date getCreatedDate() {

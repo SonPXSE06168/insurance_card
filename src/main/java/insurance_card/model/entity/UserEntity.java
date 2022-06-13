@@ -10,24 +10,24 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "accident")
-public class AccidentEntity {
+@Table(name = "user")
+public class UserEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
 	private Long id;
 
-	@Column(name = "user_id")
-	private Long userId;
+	@Column(name = "username")
+	private String username;
 
-	@Column(name = "accident_type")
-	private String accidentType;
+	@Column(name = "password")
+	private String password;
 
-	@Column
-	private String description;
+	@Column(name = "role")
+	private String role;
 
-	@Column
-	private String date;
+	private boolean isLocked;
 
 	@Column(name = "created_date")
 	private Date createdDate;
@@ -41,17 +41,16 @@ public class AccidentEntity {
 	@Column(name = "modified_by")
 	private String modifiedBy;
 
-	public AccidentEntity() {
-
+	public UserEntity() {
 	}
 
-	public AccidentEntity(Long id, Long userId, String accidentType, String description, String date, Date createdDate,
+	public UserEntity(Long id, String username, String password, String role, boolean isLocked, Date createdDate,
 			String createdBy, Date modifiedDate, String modifiedBy) {
 		this.id = id;
-		this.userId = userId;
-		this.accidentType = accidentType;
-		this.description = description;
-		this.date = date;
+		this.username = username;
+		this.password = password;
+		this.role = role;
+		this.isLocked = isLocked;
 		this.createdDate = createdDate;
 		this.createdBy = createdBy;
 		this.modifiedDate = modifiedDate;
@@ -66,36 +65,28 @@ public class AccidentEntity {
 		this.id = id;
 	}
 
-	public Long getUserId() {
-		return userId;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setUserId(Long userId) {
-		this.userId = userId;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
-	public String getAccidentType() {
-		return accidentType;
+	public String getPassword() {
+		return password;
 	}
 
-	public void setAccidentType(String accidentType) {
-		this.accidentType = accidentType;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
-	public String getDescription() {
-		return description;
+	public String getRole() {
+		return role;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	public String getDate() {
-		return date;
-	}
-
-	public void setDate(String date) {
-		this.date = date;
+	public void setRole(String role) {
+		this.role = role;
 	}
 
 	public Date getCreatedDate() {
@@ -128,6 +119,14 @@ public class AccidentEntity {
 
 	public void setModifiedBy(String modifiedBy) {
 		this.modifiedBy = modifiedBy;
+	}
+
+	public boolean isLocked() {
+		return isLocked;
+	}
+
+	public void setLocked(boolean isLocked) {
+		this.isLocked = isLocked;
 	}
 
 }

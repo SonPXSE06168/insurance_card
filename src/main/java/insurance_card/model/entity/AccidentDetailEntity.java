@@ -10,24 +10,21 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "accident")
-public class AccidentEntity {
+@Table(name = "accident_detail")
+public class AccidentDetailEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@Column(name = "user_id")
-	private Long userId;
+	@Column(name = "accident_id")
+	private Long accidentId;
 
-	@Column(name = "accident_type")
-	private String accidentType;
+	@Column(name = "information")
+	private String information;
 
-	@Column
-	private String description;
-
-	@Column
-	private String date;
+	@Column(name = "accident_image_id")
+	private Long accidentImageId;
 
 	@Column(name = "created_date")
 	private Date createdDate;
@@ -41,17 +38,15 @@ public class AccidentEntity {
 	@Column(name = "modified_by")
 	private String modifiedBy;
 
-	public AccidentEntity() {
-
+	public AccidentDetailEntity() {
 	}
 
-	public AccidentEntity(Long id, Long userId, String accidentType, String description, String date, Date createdDate,
+	public AccidentDetailEntity(Long id, Long accidentId, String information, Long accidentImageId, Date createdDate,
 			String createdBy, Date modifiedDate, String modifiedBy) {
 		this.id = id;
-		this.userId = userId;
-		this.accidentType = accidentType;
-		this.description = description;
-		this.date = date;
+		this.accidentId = accidentId;
+		this.information = information;
+		this.accidentImageId = accidentImageId;
 		this.createdDate = createdDate;
 		this.createdBy = createdBy;
 		this.modifiedDate = modifiedDate;
@@ -66,36 +61,28 @@ public class AccidentEntity {
 		this.id = id;
 	}
 
-	public Long getUserId() {
-		return userId;
+	public Long getAccidentId() {
+		return accidentId;
 	}
 
-	public void setUserId(Long userId) {
-		this.userId = userId;
+	public void setAccidentId(Long accidentId) {
+		this.accidentId = accidentId;
 	}
 
-	public String getAccidentType() {
-		return accidentType;
+	public String getInformation() {
+		return information;
 	}
 
-	public void setAccidentType(String accidentType) {
-		this.accidentType = accidentType;
+	public void setInformation(String information) {
+		this.information = information;
 	}
 
-	public String getDescription() {
-		return description;
+	public Long getAccidentImageId() {
+		return accidentImageId;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	public String getDate() {
-		return date;
-	}
-
-	public void setDate(String date) {
-		this.date = date;
+	public void setAccidentImageId(Long accidentImageId) {
+		this.accidentImageId = accidentImageId;
 	}
 
 	public Date getCreatedDate() {
