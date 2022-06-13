@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="https://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<title>Spring Security Example</title>
+<style>
+body {
+	background-image: url('/cover.png');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
+</style>
+</head>
+<body>
+	<h1 style="text-align: center;">Insurance Card</h1>
+	<p>
+		Please <a th:href="@{/hello}">Login</a> to see more.
+	</p>
+	<img src="insuranceBanner.png" alt="banner" width="1000px"
+		height="500px" />
+
+
+</body>
+</html>
